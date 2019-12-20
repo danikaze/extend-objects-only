@@ -1,0 +1,48 @@
+{
+  "name": "extend-objects-only",
+  "version": "1.0.0",
+  "description": "Recursively merge objects but copy arrays",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && scripts/build.sh",
+    "dev": "tsc -w --sourceMap",
+    "clean": "rimraf dist",
+    "test": "npm run lint && nyc mocha -r ts-node/register test/index.spec.ts",
+    "lint": "tslint -p tsconfig.json -c tslint.yaml"
+  },
+  "keywords": [
+    "deep",
+    "extend",
+    "merge",
+    "recursive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danikaze/extend-objects-only.git"
+  },
+  "homepage": "https://github.com/danikaze/extend-objects-only",
+  "bugs": "https://github.com/danikaze/extend-objects-only/issues",
+  "author": {
+    "name": "danikaze",
+    "email": "danikaze@gmail.com"
+  },
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^3.5.0",
+    "mocha": "^3.5.3",
+    "nyc": "^13.3.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^2.7.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.20.1",
+    "tslint-consistent-codestyle": "^1.16.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-lines-between-class-members": "^1.3.6",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "^3.7.3",
+    "typescript-tslint-plugin": "^0.5.5"
+  }
+}
