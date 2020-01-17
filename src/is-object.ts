@@ -1,4 +1,3 @@
-/* tslint:disable:no-any */
 const objectToString = Object.prototype.toString;
 
 /**
@@ -7,7 +6,7 @@ const objectToString = Object.prototype.toString;
  * @param value value to check
  * @returns `true` if `obj` is an object
  */
-export function isObject(value: any): value is object {
+export function isObject(value: unknown): value is object {
   const type = typeof value;
 
   return (
