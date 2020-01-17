@@ -1,4 +1,5 @@
 import { isObject } from './is-object';
+import { isDom } from './is-dom';
 
 /**
  * Deep extends objects (like jQuery.extend) but simply assign arrays
@@ -29,7 +30,7 @@ export function extendObjectsOnly<T>(...args: Partial<T>[]): Partial<T> {
         return;
       }
 
-      if (isObject(value)) {
+      if (isObject(value) && !isDom(value)) {
         target[key] = extendObjectsOnly(target[key], value);
         // ignore undefined values (will copy null ones)
       } else if (value !== undefined) {
