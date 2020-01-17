@@ -1,6 +1,6 @@
 {
   "name": "extend-objects-only",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Recursively merge objects but copy arrays",
   "main": "index.js",
   "scripts": {

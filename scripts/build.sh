@@ -31,7 +31,7 @@ error() {
 C_YELLOW='\033[1;37m'
 C_RED='\033[1;31m'
 C_DEFAULT='\033[0m'
-CWD=`cwd`
+PWD=`pwd`
 PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"/..
 TARGET_DIR="${PROJECT_ROOT}/dist"
 TSC="${PROJECT_ROOT}/node_modules/.bin/tsc"
@@ -67,4 +67,4 @@ if [[ $ans =~ [yY] ]]; then
 fi
 
 echo
-cd "${CWD}"
+cd "${PWD}"

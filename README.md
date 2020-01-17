@@ -52,6 +52,10 @@ npm install -d && npm test
 
 ## Change log
 
+### 1.0.1
+
+- Compare and copy DOM objects as direct values (no-deep)
+
 ### 1.0.0
 
 - First version
