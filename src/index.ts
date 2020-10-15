@@ -5,7 +5,9 @@ import { isDom } from './is-dom';
  * Deep extends objects (like jQuery.extend) but simply assign arrays
  * @param args List of objects to extend. Use a new object `{}` as the first argument to clone
  */
-export function extendObjectsOnly<T>(...args: Partial<T>[]): Partial<T> {
+export function extendObjectsOnly<T>(
+  ...args: (Partial<T> | undefined)[]
+): Partial<T> {
   let target = args[0];
 
   if (!isObject(target)) {

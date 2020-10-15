@@ -165,4 +165,22 @@ describe('#extendObjectsOnly<any>', () => {
     const res = extendObjectsOnly<any>(base, ext);
     assert.deepEqual(res, expected);
   });
+
+  it('should ignore undefined parameters', () => {
+    type T = Record<'a' | 'b' | 'c' | 'd', number>;
+    const p1 = { a: 1 };
+    const p2 = { b: 2 };
+    const p3 = { b: 3, c: 3 };
+    const p4 = undefined;
+    const p5 = { c: 5, d: 5 };
+    const expected = {
+      a: 1,
+      b: 3,
+      c: 5,
+      d: 5,
+    };
+
+    const res = extendObjectsOnly<T>({}, p1, p2, p3, p4, p5);
+    assert.deepEqual(res, expected);
+  });
 });
